@@ -42,8 +42,10 @@ public class CompanyTester {
         System.out.println("Enter 1 for the customers to send items to each other");
         System.out.println("Enter 2 for the company details");
         System.out.println("Enter 3 to print item details, customer details and employee details");
+        System.out.println("Enter -1 to exit");
         int action = scan.nextInt();
         
+        while(action != -1){
             if(action == 1)
             {
                 // 3. Customers send items to each other. Have a case where the Customer
@@ -76,7 +78,8 @@ public class CompanyTester {
                 // 5. Deliver items between customers.
                 amazon.deliverPackages();
     
-    
+                System.out.println("Enter the action that you want preformed");
+                action = scan.nextInt();
             }
             else if(action == 2)
             {
@@ -104,6 +107,9 @@ public class CompanyTester {
                 amazon.deliverPackages();
 
                 System.out.println(amazon.toString());
+
+                System.out.println("Enter the action that you want preformed");
+                action = scan.nextInt();
             }
             else if(action == 3)
             {
@@ -117,14 +123,21 @@ public class CompanyTester {
     
                 System.out.println(employee1);
                 System.out.println(employee2);
-            }
-            else
-            {
-                System.out.println("The input is invalid.");
-                System.out.println("Enter a valid input ");
+
+                System.out.println("Enter the action that you want preformed");
                 action = scan.nextInt();
             }
-       
+            else if(action == -1)
+            {
+                System.out.println("Have a good day");
+                break;
+            }
+            else{
+                System.out.println("Invalid Input!");
+                System.out.println("Enter the action that you want preformed");
+                action = scan.nextInt();
+            }
+        }
 
 
 
