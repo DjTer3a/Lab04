@@ -6,9 +6,6 @@ public class Mail extends Delivery{
     {
         super(sender,receiver,packageNo);
         this.content=content;
-        this.sender=sender;
-        this.receiver=receiver;
-        this.packageNo=packageNo;
     }
 
     //returns 0.1 as weight of item.
@@ -20,8 +17,8 @@ public class Mail extends Delivery{
     //returns properties of the mail.
     public String toString() {
         String mailContent="";
-        mailContent="Package Content :- "+content+". Package Number :- "+packageNo+"Package Weight :- "+getWeight()+". This package was sent by :- "
-            + this.sender +". This package is recieved by :- "+this.receiver;
+        mailContent="Package Content :- "+this.content+". Package Number :- "+super.getPackageNo()+"Package Weight :- "+getWeight()+". This package was sent by :- "
+            + super.getSender() +". This package is recieved by :- "+super.getReceiver();
         return mailContent;
     }
 }

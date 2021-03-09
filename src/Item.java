@@ -10,11 +10,20 @@ public class Item {
 
     //gets weight of item.
     public double getWeight() {
-        return weight;
+        return this.weight;
     }
 
     //gets content of item.
     public String getContent() {
-        return content;
+        return this.content;
+    }
+
+    /**
+     * Returns the string representation of the Item
+     * 
+     * @return String
+     */
+    public String toString() {
+        return "Weight: " + this.weight + " " + "Content: " + this.content;
     }
 }

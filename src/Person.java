@@ -21,6 +21,16 @@ public abstract class Person implements Locatable {
         setPos(0,0);
     }
 
+
+    /**
+     * Sets the name of the Person
+     * 
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
     //gets name of person
     public String getName(){
         return this.name;
