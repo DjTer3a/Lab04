@@ -5,14 +5,14 @@ public class CompanyTester {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        // 1. Create several items with different weights.
+        // Create several items with different weights.
         Item item1 = new Item(0.05, "A sample mail item");
         Item item2 = new Item(0.1, "A mail that fits the limit");
         Item item3 = new Item(0.2, "A small package");
         Item item4 = new Item(1, "A mobile phone");   
 
 
-
+        //User Input prompt.
         System.out.println("Enter customer one name : -");
         String customer1Name = scan.nextLine();
         System.out.println("Enter customer two name : -");
@@ -23,21 +23,15 @@ public class CompanyTester {
         String employee2Name = scan.nextLine();
 
 
-
-
-
-        // 2. Create at least 2 Customers and 2 Employees.
+        // Create at least 2 Customers and 2 Employees.
         Customer customer1 = new Customer(customer1Name);
         Customer customer2 = new Customer(customer2Name);
 
         Employee employee1 = new Employee(1, employee1Name);
         Employee employee2 = new Employee(2, employee2Name);
 
-
-
-
         
-
+        //User Input prompt.
         System.out.println("Enter the action that you want preformed");
         System.out.println("Enter 1 for the customers to send items to each other");
         System.out.println("Enter 2 for the company details");
@@ -46,10 +40,11 @@ public class CompanyTester {
         int action = scan.nextInt();
         
         while(action != -1){
+
+            // User chose for customers to send items to each other.
             if(action == 1)
             {
-                // 3. Customers send items to each other. Have a case where the Customer
-                // couldn’t send the item, because there was no available Employee.
+                // Customers send items to each other. Have a case where the Customer couldn’t send the item, because there was no available Employee.
     
                 Company amazon = new Company(5, 5);
     
@@ -71,16 +66,18 @@ public class CompanyTester {
                 System.out.println(customer1.sendItem(amazon, item1, customer2));
                 System.out.println(customer1.sendItem(amazon, item1, customer2));
     
-                // 4. Get an employee busy by giving it the maximum amount of jobs
+                // Get an employee busy by giving it the maximum amount of jobs
                 System.out.println("Employee1 getAvailability(): " + employee1.getAvailability());
                 System.out.println("Employee2 getAvailability(): " + employee2.getAvailability());
     
-                // 5. Deliver items between customers.
+                // Deliver items between customers.
                 amazon.deliverPackages();
     
                 System.out.println("Enter the action that you want preformed");
                 action = scan.nextInt();
             }
+
+            //User chose to print company details.
             else if(action == 2)
             {
                 Company amazon = new Company(5, 5);
@@ -103,7 +100,7 @@ public class CompanyTester {
                 customer1.sendItem(amazon, item1, customer2);
                 customer1.sendItem(amazon, item1, customer2);
     
-                // 5. Deliver items between customers.
+                // Deliver items between customers.
                 amazon.deliverPackages();
 
                 System.out.println(amazon.toString());
@@ -111,6 +108,8 @@ public class CompanyTester {
                 System.out.println("Enter the action that you want preformed");
                 action = scan.nextInt();
             }
+
+            //User chose to print item, employee and customer details.
             else if(action == 3)
             {
                 System.out.println(item1);
@@ -127,24 +126,21 @@ public class CompanyTester {
                 System.out.println("Enter the action that you want preformed");
                 action = scan.nextInt();
             }
+
+            //User chose to exit the program.
             else if(action == -1)
             {
                 System.out.println("Have a good day");
                 break;
             }
+
+            //User chose an invalid choice.
             else{
                 System.out.println("Invalid Input!");
                 System.out.println("Enter the action that you want preformed");
                 action = scan.nextInt();
             }
         }
-
-
-
-            scan.close();
-
-        
-
+        scan.close();
     }
-
 }

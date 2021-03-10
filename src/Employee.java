@@ -1,15 +1,18 @@
 public class Employee extends Person {
-    // properties
-
+    
+    // Instance variables/Properties.
     final int MAX_JOBS = 5;
-
     int currentJobs;
     Delivery[] deliveries;
     double salary;
     int employeeNo;
     boolean available;
 
-    // constructor
+    /**
+     * Constructor for class Employee.
+     * 
+     * @param employeeNo,name
+     */
     public Employee(int employeeNo, String name) {
         super(name);
 
@@ -20,9 +23,9 @@ public class Employee extends Person {
         deliveries = new Delivery[MAX_JOBS];
     }
 
-    // methods
 
     /**
+     * Adjusts salary of employee.
      * @param value
      */
     public void adjustSalary(double value) {
@@ -30,7 +33,7 @@ public class Employee extends Person {
     }
 
     /**
-     * Returns the availability of the Employee
+     * Returns the availability of an Employee.
      * 
      * @return boolean
      */
@@ -47,12 +50,9 @@ public class Employee extends Person {
     }
 
     /**
-     * Assigns a job to the Employee
+     * Assigns a job to an Employee.
      * 
-     * @param sendItem  The item to be sent
-     * @param sender    The sender of the item
-     * @param receiver  The receiver of the item
-     * @param packageNo The packageNo of the item
+     * @param sendItem,sender,receiver,packageNo
      */
     public void addJob(Item sendItem, Customer sender, Customer receiver, int packageNo) {
 
@@ -69,13 +69,17 @@ public class Employee extends Person {
         }
     }
 
+    /**
+     * Gets deliveries pending.
+     * @return int
+     */
     public int getDeliveries()
     {
         return deliveries.length;
     }
 
     /**
-     * Deliver packages that are assigned to the Employee
+     * Deliver packages by an Employee.
      */
     public void deliverPackages() {
 
@@ -91,7 +95,7 @@ public class Employee extends Person {
     
 
     /**
-     * Returns the string representation of the Employee
+     * Applies toString() to the Employee.
      * 
      * @return String
      */

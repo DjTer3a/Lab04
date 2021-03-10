@@ -3,19 +3,31 @@ public abstract class Person implements Locatable {
     int posX;
     int posY;
 
-    //sets position of x and y
+    /**
+     * Constructor creates Company with Employees and customers.
+     * 
+     * @param x,y
+     */
     public void setPos(int x, int y){
         this.posX=x;
         this.posY=y;
     }
 
-    //constructor for person with name and posX and posY
+    /**
+     * Constructor creates Person.
+     * 
+     * @param name,x,y
+     */
     public Person(String name, int x, int y){
         this.name=name;
         setPos(x,y);
     }
 
-    //constructor for person with only name
+    /**
+     * Constructor creates Person.
+     * 
+     * @param name
+     */
     public Person(String name){
         this.name=name;
         setPos(0,0);
@@ -23,7 +35,7 @@ public abstract class Person implements Locatable {
 
 
     /**
-     * Sets the name of the Person
+     * Sets the name of the Person.
      * 
      * @param name
      */
@@ -31,17 +43,27 @@ public abstract class Person implements Locatable {
         this.name = name;
     }
 
-    //gets name of person
+    /**
+     * Gets the name of the Person.
+     */
     public String getName(){
         return this.name;
     }
 
-    //gets posX
+    /**
+     * Returns  posX of the Person.
+     * 
+     * @return int
+     */
     public int getX(){
         return this.posX;
     }
 
-    //gets posY
+    /**
+     * Returns  posY of the Person.
+     * 
+     * @return int
+     */
     public int getY(){
         return this.posY;
     }

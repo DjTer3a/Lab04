@@ -3,28 +3,40 @@ public abstract class Delivery {
     Customer sender;
     Customer receiver;
 
-    //constructor for delivery.
+    /**
+     * Constructor for class Delivery.
+     * 
+     * @param sender,receiver,packageNo
+     */
     public Delivery(Customer sender, Customer receiver, int packageNo){
         this.sender=sender;
         this.receiver=receiver;
         this.packageNo=packageNo;
     }
     
-    //gets sender of item.
+    /**
+     * Gets sender of item.
+     */
     public Customer getSender() {
         return sender;
     }
 
-    //gets receiver of item.
+    /**
+     * Gets receiver of item.
+     */
     public Customer getReceiver(){
         return receiver;
     }
 
-    //gets packageNo of item.
+    /**
+     * Gets packageNo of item.
+     */
     public int getPackageNo() {
         return packageNo;
     }
 
-    //abstract method of getWeight.
+    /**
+     * Abstract method of getWeight.
+     */
     abstract double getWeight();
 }

@@ -1,18 +1,21 @@
 
 public class Customer extends Person{
 
-    // properties
+    // Instance variables/Properties.
     public Item currentItem;
 
-    // constructor
+    /**
+     * Constructor for class Customer.
+     * 
+     * @param name
+     */
     public Customer(String name) {
         super(name);
     }
 
-    // methods
 
     /**
-     * Returns the current item
+     * Returns the current item.
      * 
      * @return Item
      */
@@ -21,7 +24,7 @@ public class Customer extends Person{
     }
 
     /**
-     * Set the current item for the Customer
+     * Set the current item for the Customer.
      * 
      * @param item
      */
@@ -30,11 +33,9 @@ public class Customer extends Person{
     }
 
     /**
-     * Send an item for the Customer
+     * Send an item for the Customer.
      * 
-     * @param company
-     * @param item
-     * @param receiver
+     * @param company,item,receiver
      * @return boolean
      */
     public boolean sendItem(Company company, Item item, Customer receiver) {
@@ -48,7 +49,7 @@ public class Customer extends Person{
     }
 
     /**
-     * Returns the string representation of the Customer
+     * Applies toString() to Customer.
      * 
      * @return String
      */

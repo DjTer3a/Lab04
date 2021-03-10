@@ -3,6 +3,7 @@ import java.util.Random;
 
 public class Company implements Locatable{
     
+    //Instance variables/ Properties.
     final int EMPLOYEE_CAPACITY = 15;
     Employee[] employees;
     ArrayList<Customer> customers;
@@ -12,7 +13,11 @@ public class Company implements Locatable{
     int posX;
     int posY;
 
-    // constructor
+    /**
+     * Constructor creates Company with Employees and customers.
+     * 
+     * @param x,y
+     */
     Company(int x, int y) {
         setPos(x, y);
 
@@ -22,7 +27,7 @@ public class Company implements Locatable{
     }
 
     /**
-     * Returns the X position of the Company
+     * Returns  posX of the Company. 
      * 
      * @return int
      */
@@ -31,7 +36,7 @@ public class Company implements Locatable{
     }
 
     /**
-     * Returns the Y position of the Company
+     * Returns  posY of the Company.
      * 
      * @return int
      */
@@ -40,10 +45,9 @@ public class Company implements Locatable{
     }
 
     /**
-     * Sets the X and Y pos for the Company
+     * Sets  posX and posY of the Company. 
      * 
-     * @param x
-     * @param y
+     * @param x,y
      */
     public void setPos(int x, int y) {
         this.posX = x;
@@ -51,11 +55,10 @@ public class Company implements Locatable{
     }
 
     /**
-     * Adds an employee to the company and returns true if the employee is
-     * successfully added
+     * Adds an employee to the Company and returns true if the employee is added.
      * 
      * @param candidate
-     * @return
+     * @return boolean
      */
     public boolean addEmployee(Employee candidate) {
 
@@ -86,21 +89,19 @@ public class Company implements Locatable{
     }
 
     /**
-     * Adds the given customer to the Company
+     * Adds a customer to the Company.
      * 
      * @param candidate
-     * @return
      */
     public void addCustomer(Customer customer) {
         customers.add(customer);
     }
 
     /**
-     * Removes an employee from the Company and returns true if the employee at the
-     * given index is deleted
+     * Removes an employee from the Company and returns true if the employee is deleted.
      * 
      * @param candidate
-     * @return
+     * @return boolean
      */
     public boolean terminateContract(int employeeIndex) {
         Employee[] newEmployeesArray = new Employee[this.employees.length - 1];
@@ -129,11 +130,10 @@ public class Company implements Locatable{
     }
 
     /**
-     * Creates a deliverable object from the item if an employee is available and
-     * returns true, otherwise it returns false
+     * Creates a deliverable object of item if employee is available else returns false.
      * 
      * @param candidate
-     * @return
+     * @return boolean
      */
     public boolean createDeliverable(Item sendItem, Customer sender, Customer receiver) {
 
@@ -159,6 +159,11 @@ public class Company implements Locatable{
 
     }
 
+    /**
+     * Returns  total jobs of the Company.
+     * 
+     * @return int
+     */
     public int getTotalJobs()
     {
         int totalJobs = 0;
@@ -171,11 +176,7 @@ public class Company implements Locatable{
     }
 
     /**
-     * Deliver all the packages via Employees and print the delivery information.
-     * Displays type, no, sender and receiver info (name and loc) for each delivery.
-     * 
-     * @param candidate
-     * @return
+     * Deliver all packages and print delivery information.
      */
     public void deliverPackages() {
         for (int i = 0; i < this.employees.length; i++) {
@@ -188,16 +189,14 @@ public class Company implements Locatable{
     
 
     /**
-     * Lists and prints all the information related to the Company. Includes
-     * deliveries, employees, and customers.
+     * Lists and prints all the information related to the Company.
      * 
      * @param candidate
-     * @return
      */
     public String toString() {
-        String companyContent="";
-        companyContent="The company currently has the following number of employees :- "+numOfEmployees
+        String CompanyContent="";
+        CompanyContent="The Company currently has the following number of employees :- "+numOfEmployees
             +", and the following number of customers :- "+(customers.size()+1)+". The number of packages being delieverd is :- "+getTotalJobs();
-        return companyContent;
+        return CompanyContent;
     }
 }

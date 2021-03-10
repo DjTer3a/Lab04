@@ -1,25 +1,35 @@
 public class Item {
+
+    // Instance variables/Properties.
     double weight;
     String content;
 
-    //constructor for item.
+    /**
+     * Constructor for class Item.
+     * 
+     * @param weight,content
+     */
     public Item(double weight, String content){
         this.weight = weight;
         this.content = content;
     }
 
-    //gets weight of item.
+    /**
+     * Gets weight of item.
+     */
     public double getWeight() {
         return this.weight;
     }
 
-    //gets content of item.
+    /**
+     * Gets content of item.
+     */
     public String getContent() {
         return this.content;
     }
 
     /**
-     * Returns the string representation of the Item
+     * Applies toString() to the Item
      * 
      * @return String
      */
