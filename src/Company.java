@@ -108,22 +108,24 @@ public class Company implements Locatable{
 
         for (int i = 0; i < this.employees.length; i++) {
 
-            if (i != employeeIndex || !employeeTerminated) {
-                newEmployeesArray[i] = this.employees[i];
+            if (i != employeeIndex || employeeTerminated) {
+
+                int newArrayIndex = employeeTerminated ? i - 1 : i;
+
+                newEmployeesArray[newArrayIndex] = this.employees[i];
+
             } else {
-                i -= 1;
+
                 employeeTerminated = true;
+
             }
 
         }
 
         this.employees = newEmployeesArray;
 
-        if (employeeTerminated) {
-            return true;
-        } else {
-            return false;
-        }
+        return employeeTerminated;
+
     }
 
     /**

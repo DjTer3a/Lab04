@@ -17,7 +17,7 @@ public class Employee extends Person {
         this.available = true;
         this.currentJobs = 0;
 
-        deliveries = new Delivery[5];
+        deliveries = new Delivery[MAX_JOBS];
     }
 
     // methods
