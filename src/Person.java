@@ -1,3 +1,13 @@
+/**
+ * Lab 04 Instructions found in CS102_Lab04.pdf
+ * 
+ * Style guidlines URL:-
+ * http://www.cs.bilkent.edu.tr/~adayanik/cs101/practicalwork/styleguidelines.htm
+ * 
+ * 
+ * @author Mostafa Higazy
+ * @version 10/03/2021
+ */
 public abstract class Person implements Locatable {
     String name;
     int posX;
